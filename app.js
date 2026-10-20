@@ -172,7 +172,7 @@ function renderArticlesLayout(posts) {
 
   let featuredHtml = `
     <div class="featured-post" onclick="showDetail('${featured.id}')">
-      <img src="${featured.imageUrl}" onerror="this.src='https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=600&q=80'" alt="${featured.title}">
+      <img src="${featured.imageUrl}" onerror="this.src='https://cdnphoto.dantri.com.vn/Ur-sSuXRZE7M3hpXU7cD9cM7RCM=/thumb_w/1020/2026/09/28/cat-linh-1749476352928-1790572938865.jpg'" alt="${featured.title}">
       <div class="info">
         <h3>${featured.title}</h3>
         <p>${featured.excerpt}</p>
@@ -185,7 +185,7 @@ function renderArticlesLayout(posts) {
     sidePosts.forEach(post => {
       sideHtml += `
         <div class="side-post" onclick="showDetail('${post.id}')">
-          <img src="${post.imageUrl}" onerror="this.src='https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=300&q=80'" alt="${post.title}">
+          <img src="${post.imageUrl}" onerror="this.src='https://cdnphoto.dantri.com.vn/Ur-sSuXRZE7M3hpXU7cD9cM7RCM=/thumb_w/1020/2026/09/28/cat-linh-1749476352928-1790572938865.jpg'" alt="${post.title}">
           <h4>${post.title}</h4>
         </div>
       `;
@@ -203,7 +203,7 @@ function renderArticlesLayout(posts) {
     item.className = 'article-item';
     item.onclick = () => showDetail(post.id);
     item.innerHTML = `
-      <img src="${post.imageUrl}" onerror="this.src='https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=200&q=80'" alt="${post.title}">
+      <img src="${post.imageUrl}" onerror="this.src='https://cdnphoto.dantri.com.vn/Ur-sSuXRZE7M3hpXU7cD9cM7RCM=/thumb_w/1020/2026/09/28/cat-linh-1749476352928-1790572938865.jpg'" alt="${post.title}">
       <div class="content-right">
         <h3>${post.title}</h3>
         <p>${post.excerpt}</p>
