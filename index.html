@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Tin Tức Dân Trí Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Thanh điều hướng (Navbar) -->
+  <header>
+    <div class="top-header">
+      <div class="container logo-container">
+        <a href="index.html" class="logo">DÂN TRÍ DEMO</a>
+        <a href="crawler.html" class="btn-crawler-link"><i class="fa-solid fa-spider"></i> Công cụ Crawler</a>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container">
+        <ul id="menu-tree" class="nav-menu">
+          <!-- Load động từ LocalStorage -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Khung nội dung chính -->
+  <main class="container main-content">
+    
+    <!-- Trang Danh Sách Bài Viết -->
+    <section id="category-page" class="view-section">
+      <h2 id="category-title" class="section-title">Tin Mới Nhất</h2>
+
+      <!-- Top Section (Layout 1-2): 1 bài lớn + 2 bài nhỏ -->
+      <div id="top-section" class="top-grid"></div>
+
+      <!-- Danh sách bài viết còn lại (List dọc) -->
+      <div id="latest-list" class="articles-list"></div>
+    </section>
+
+    <!-- Trang Chi Tiết Bài Viết -->
+    <section id="detail-page" class="view-section hidden">
+      <button class="btn-back" onclick="showCategoryView()"><i class="fa-solid fa-arrow-left"></i> Quay lại</button>
+      <article class="article-detail">
+        <span id="detail-category" class="badge"></span>
+        <h1 id="detail-title"></h1>
+        <div class="meta-info">
+          <span id="detail-author"><i class="fa-solid fa-user"></i> </span> | 
+          <span id="detail-time"><i class="fa-regular fa-clock"></i> </span>
+        </div>
+        <p id="detail-excerpt" class="sapo-detail"></p>
+        <div id="detail-image-container" class="image-container"></div>
+        <div id="detail-content" class="content-body"></div>
+        <div class="source-info">Nguồn gốc: <a id="detail-source-link" href="#" target="_blank"></a></div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Footer Website -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>DÂN TRÍ DEMO</h3>
+        <p>Trang tin tức điện tử tổng hợp cập nhật nhanh nhất tin tức thời sự, kinh tế, xã hội và công nghệ.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên kết nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="crawler.html">Công cụ Crawler</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Thông tin liên hệ</h3>
+        <p><i class="fa-solid fa-envelope"></i> toasoan@dantri.com.vn</p>
+        <p><i class="fa-solid fa-location-dot"></i> Cầu Giấy, Hà Nội</p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DanTri Demo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
