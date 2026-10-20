@@ -42,7 +42,7 @@ async function crawlNewsArticle(url) {
     }
 
     if (!imageUrl || imageUrl.startsWith('data:')) {
-      imageUrl = "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80";
+      imageUrl = "https://cdnphoto.dantri.com.vn/Ur-sSuXRZE7M3hpXU7cD9cM7RCM=/thumb_w/1020/2026/09/28/cat-linh-1749476352928-1790572938865.jpg";
     }
 
     const author = doc.querySelector('.author-name')?.innerText?.trim() || 
