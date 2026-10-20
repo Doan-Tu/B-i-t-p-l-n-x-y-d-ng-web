@@ -24,7 +24,7 @@ const samplePosts = [
     category: "Bất động sản",
     publishedAt: "2026-09-28 12:22",
     source: "dantri.com.vn",
-    imageUrl: "https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://cdnphoto.dantri.com.vn/Ur-sSuXRZE7M3hpXU7cD9cM7RCM=/thumb_w/1020/2026/09/28/cat-linh-1749476352928-1790572938865.jpg",
     url: "https://dantri.com.vn/bat-dong-san/ha-noi-tinh-co-che-boi-thuong-dat-dac-biet-cho-7-du-an-duong-sat-20260928122246655.htm"
   },
   {
