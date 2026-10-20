@@ -31,8 +31,19 @@ async function crawlNewsArticle(url) {
     const contentEl = doc.querySelector('.singular-content');
     const content = contentEl ? contentEl.innerText.trim() : '';
 
-    const imageEl = doc.querySelector('.singular-content img, .singular-sapo img');
-    const imageUrl = imageEl ? imageEl.getAttribute('src') : 'https://via.placeholder.com/600x400?text=No+Image';
+    // Cải tiến trích xuất ảnh chống lỗi link hỏng
+    let imageEl = doc.querySelector('.singular-content img, .singular-sapo img, figure img, .dt-news-detail img');
+    let imageUrl = '';
+    
+    if (imageEl) {
+      imageUrl = imageEl.getAttribute('src') || 
+                 imageEl.getAttribute('data-src') || 
+                 imageEl.getAttribute('data-original') || '';
+    }
+
+    if (!imageUrl || imageUrl.startsWith('data:')) {
+      imageUrl = "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80";
+    }
 
     const author = doc.querySelector('.author-name')?.innerText?.trim() || 
                    doc.querySelector('.singular-author')?.innerText?.trim() || 'Tổng hợp';
