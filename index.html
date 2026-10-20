@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang Tin Tức Dân Trí Demo</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Nhúng FontAwesome để hiển thị icon mạng xã hội và tiện ích -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -29,64 +30,96 @@
   <!-- Khung nội dung chính -->
   <main class="container main-content">
     
-    <!-- Trang Danh Sách Bài Viết -->
+    <!-- 1. Trang Danh Sách Bài Viết -->
     <section id="category-page" class="view-section">
       <h2 id="category-title" class="section-title">Tin Mới Nhất</h2>
 
-      <!-- Top Section (Layout 1-2): 1 bài lớn + 2 bài nhỏ -->
+      <!-- Top Section (Layout 1-2): 1 bài lớn bên trái + 2 bài nhỏ bên phải -->
       <div id="top-section" class="top-grid"></div>
 
-      <!-- Danh sách bài viết còn lại (List dọc) -->
+      <!-- Danh sách bài viết còn lại (List dọc sắp xếp mới -> cũ) -->
       <div id="latest-list" class="articles-list"></div>
     </section>
 
-    <!-- Trang Chi Tiết Bài Viết -->
+    <!-- 2. Trang Chi Tiết Bài Viết (Đầy đủ: Tiêu đề, Ảnh, Nội dung, Tác giả, Thời gian đăng, Chuyên mục) -->
     <section id="detail-page" class="view-section hidden">
-      <button class="btn-back" onclick="showCategoryView()"><i class="fa-solid fa-arrow-left"></i> Quay lại</button>
+      <button class="btn-back" onclick="showCategoryView()"><i class="fa-solid fa-arrow-left"></i> Quay lại danh sách</button>
       <article class="article-detail">
+        <!-- Chuyên mục -->
         <span id="detail-category" class="badge"></span>
+        
+        <!-- Tiêu đề -->
         <h1 id="detail-title"></h1>
+        
+        <!-- Thông tin tác giả & Thời gian đăng -->
         <div class="meta-info">
-          <span id="detail-author"><i class="fa-solid fa-user"></i> </span> | 
-          <span id="detail-time"><i class="fa-regular fa-clock"></i> </span>
+          <span><i class="fa-solid fa-user-pen"></i> <strong id="detail-author"></strong></span> 
+          <span><i class="fa-regular fa-clock"></i> <span id="detail-time"></span></span>
         </div>
+
+        <!-- Sapo / Tóm tắt -->
         <p id="detail-excerpt" class="sapo-detail"></p>
+
+        <!-- Ảnh bài viết -->
         <div id="detail-image-container" class="image-container"></div>
+
+        <!-- Nội dung chi tiết đầy đủ -->
         <div id="detail-content" class="content-body"></div>
-        <div class="source-info">Nguồn gốc: <a id="detail-source-link" href="#" target="_blank"></a></div>
+
+        <!-- Nguồn gốc bài viết -->
+        <div class="source-info">Nguồn gốc bài viết: <a id="detail-source-link" href="#" target="_blank"></a></div>
       </article>
     </section>
 
   </main>
 
-  <!-- Footer Website -->
+  <!-- 3. Thanh Footer cho website (Đáp ứng đúng yêu cầu mục 2.3) -->
   <footer>
     <div class="container footer-grid">
+      <!-- Cột 1: Thông tin website (tên, mô tả ngắn) -->
       <div class="footer-col">
         <h3>DÂN TRÍ DEMO</h3>
-        <p>Trang tin tức điện tử tổng hợp cập nhật nhanh nhất tin tức thời sự, kinh tế, xã hội và công nghệ.</p>
+        <p>Trang tin tức điện tử tổng hợp cập nhật liên tục các tin tức thời sự trong nước và quốc tế, bất động sản, đời sống và công nghệ nhanh chóng, chính xác.</p>
       </div>
+
+      <!-- Cột 2: Danh mục liên kết nhanh -->
       <div class="footer-col">
         <h3>Liên kết nhanh</h3>
         <ul>
           <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="crawler.html">Công cụ Crawler</a></li>
-          <li><a href="#">Liên hệ</a></li>
+          <li><a href="crawler.html">Công cụ Crawler dữ liệu</a></li>
+          <li><a href="#">Giới thiệu tòa soạn</a></li>
+          <li><a href="#">Quy chế hoạt động</a></li>
         </ul>
       </div>
+
+      <!-- Cột 3: Danh sách chuyên mục tin tức -->
+      <div class="footer-col">
+        <h3>Chuyên mục chính</h3>
+        <ul>
+          <li><a href="#" onclick="loadCategoryPosts('Thời sự')">Thời sự</a></li>
+          <li><a href="#" onclick="loadCategoryPosts('Thế giới')">Thế giới</a></li>
+          <li><a href="#" onclick="loadCategoryPosts('Bất động sản')">Bất động sản</a></li>
+          <li><a href="#" onclick="loadCategoryPosts('Mới nhất')">Tin tức mới nhất</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: Thông tin liên hệ & Mạng xã hội -->
       <div class="footer-col">
         <h3>Thông tin liên hệ</h3>
-        <p><i class="fa-solid fa-envelope"></i> toasoan@dantri.com.vn</p>
-        <p><i class="fa-solid fa-location-dot"></i> Cầu Giấy, Hà Nội</p>
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <p><i class="fa-solid fa-envelope"></i> Email: toasoan@dantri.com.vn</p>
+        <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: Tòa nhà Press Club, Lý Thái Tổ, Hoàn Kiếm, Hà Nội</p>
+        <div class="social-icons" style="margin-top: 15px;">
+          <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
     </div>
+
+    <!-- Phần bản quyền (Copyright) -->
     <div class="footer-bottom">
-      <p>&copy; 2026 DanTri Demo. All rights reserved.</p>
+      <p>&copy; 2026 Báo Dân Trí Demo - Xây dựng website tin tức. All rights reserved.</p>
     </div>
   </footer>
 
