@@ -3,40 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Công Cụ Crawler Tin Tức</title>
+  <title>Công Cụ Crawler - Báo Điện Tử Dân Trí</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Nhúng FontAwesome để hiển thị icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <div class="top-header">
       <div class="container logo-container">
-        <a href="index.html" class="logo">DÂN TRÍ DEMO</a>
-        <a href="index.html" class="btn-crawler-link"><i class="fa-solid fa-house"></i> Về Trang Chủ</a>
+        <!-- Thương hiệu DÂN TRÍ -->
+        <a href="index.html" class="logo">DÂN TRÍ</a>
+        
+        <div class="header-right-actions">
+          <a href="index.html" class="btn-crawler-link"><i class="fa-solid fa-house"></i> Về Trang Chủ</a>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- Nội dung chính Công cụ Crawler -->
   <main class="container main-content">
     <section class="crawler-box">
       <h2><i class="fa-solid fa-spider"></i> Công Cụ Thu Thập Bài Viết Tin Tức</h2>
-      <p>Nhập liên kết bài viết từ báo Dân trí để cào dữ liệu và tự động lưu vào LocalStorage.</p>
+      <p>Nhập liên kết bài viết từ báo Dân trí (dantri.com.vn) để cào dữ liệu tự động và lưu trực tiếp vào hệ thống LocalStorage.</p>
       
       <div class="form-group">
-        <input type="url" id="crawl-url" placeholder="https://dantri.com.vn/..." required>
+        <input type="url" id="crawl-url" placeholder="https://dantri.com.vn/bat-dong-san/ha-noi-tinh-co-che-boi-thuong-dat-dac-biet-cho-7-du-an-duong-sat-20260928122246655.htm" required>
         <button id="btn-crawl" onclick="handleCrawl()"><i class="fa-solid fa-download"></i> Crawl Dữ Liệu</button>
       </div>
 
-      <div id="status-message" class="status-msg"></div>
+      <!-- Thông báo trạng thái -->
+      <div id="status-message" class="status-msg" style="margin-top: 15px; font-weight: 600;"></div>
 
+      <!-- Khung hiển thị dữ liệu JSON kết quả -->
       <div id="json-result-box" class="json-box hidden">
-        <h3>Dữ liệu JSON thu thập được:</h3>
+        <h3 style="margin-bottom: 10px;"><i class="fa-solid fa-code"></i> Dữ liệu JSON chuẩn hóa thu thập được:</h3>
         <pre><code id="json-output"></code></pre>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>BÁO ĐIỆN TỬ DÂN TRÍ</h3>
+        <p>Trang tin tức điện tử tổng hợp cập nhật liên tục các tin tức thời sự trong nước và quốc tế, bất động sản, đời sống và công nghệ nhanh chóng, chính xác.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Liên kết nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="crawler.html">Công cụ Crawler dữ liệu</a></li>
+          <li><a href="#">Giới thiệu tòa soạn</a></li>
+          <li><a href="#">Quy chế hoạt động</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Chuyên mục chính</h3>
+        <ul>
+          <li><a href="index.html">Thời sự</a></li>
+          <li><a href="index.html">Thế giới</a></li>
+          <li><a href="index.html">Bất động sản</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Thông tin liên hệ</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: toasoan@dantri.com.vn</p>
+        <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: Tòa nhà Press Club, Hoàn Kiếm, Hà Nội</p>
+        <div class="social-icons" style="margin-top: 15px;">
+          <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Báo Điện Tử Dân Trí. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Nhúng các file script -->
   <script src="crawler.js"></script>
   <script src="app.js"></script>
 </body>
