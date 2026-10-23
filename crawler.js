@@ -31,7 +31,7 @@ async function crawlNewsArticle(url) {
     const contentEl = doc.querySelector('.singular-content');
     const content = contentEl ? contentEl.innerText.trim() : '';
 
-    // Cải tiến trích xuất ảnh chống lỗi link hỏng
+    // Cải tiến trích xuất ảnh chống vỡ link
     let imageEl = doc.querySelector('.singular-content img, .singular-sapo img, figure img, .dt-news-detail img');
     let imageUrl = '';
     
@@ -42,7 +42,7 @@ async function crawlNewsArticle(url) {
     }
 
     if (!imageUrl || imageUrl.startsWith('data:')) {
-      imageUrl = "https://cdnphoto.dantri.com.vn/Ur-sSuXRZE7M3hpXU7cD9cM7RCM=/thumb_w/1020/2026/09/28/cat-linh-1749476352928-1790572938865.jpg";
+      imageUrl = "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80";
     }
 
     const author = doc.querySelector('.author-name')?.innerText?.trim() || 
