@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Công Cụ Crawler - Báo Điện Tử Dân Trí</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Nhúng FontAwesome để hiển thị icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="top-header">
       <div class="container logo-container">
-        <!-- Thương hiệu DÂN TRÍ -->
         <a href="index.html" class="logo">DÂN TRÍ</a>
         
         <div class="header-right-actions">
@@ -24,7 +21,6 @@
     </div>
   </header>
 
-  <!-- Nội dung chính Công cụ Crawler -->
   <main class="container main-content">
     <section class="crawler-box">
       <h2><i class="fa-solid fa-spider"></i> Công Cụ Thu Thập Bài Viết Tin Tức</h2>
@@ -35,10 +31,8 @@
         <button id="btn-crawl" onclick="handleCrawl()"><i class="fa-solid fa-download"></i> Crawl Dữ Liệu</button>
       </div>
 
-      <!-- Thông báo trạng thái -->
       <div id="status-message" class="status-msg" style="margin-top: 15px; font-weight: 600;"></div>
 
-      <!-- Khung hiển thị dữ liệu JSON kết quả -->
       <div id="json-result-box" class="json-box hidden">
         <h3 style="margin-bottom: 10px;"><i class="fa-solid fa-code"></i> Dữ liệu JSON chuẩn hóa thu thập được:</h3>
         <pre><code id="json-output"></code></pre>
@@ -46,7 +40,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
@@ -78,9 +71,9 @@
         <p><i class="fa-solid fa-envelope"></i> Email: toasoan@dantri.com.vn</p>
         <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: Tòa nhà Press Club, Hoàn Kiếm, Hà Nội</p>
         <div class="social-icons" style="margin-top: 15px;">
-          <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
     </div>
@@ -90,7 +83,6 @@
     </div>
   </footer>
 
-  <!-- Nhúng các file script -->
   <script src="crawler.js"></script>
   <script src="app.js"></script>
 </body>
